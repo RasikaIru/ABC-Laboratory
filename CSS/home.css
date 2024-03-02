@@ -1,0 +1,354 @@
+.radio{
+    display: none;
+}
+
+.container{
+    position: relative;
+    max-width: 100%;  
+    
+  
+}
+
+.slider{
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding-top: 40%;
+    background: #141414;
+    overflow: hidden;
+    border: solid 1px #2e2e2e;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0, 8);
+}
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.1);
+    transition: 1.3s;
+}
+
+.caption {
+    position: absolute;
+    width: 100%;
+    left: 5%;
+    top: -100%;
+    color: #ffeb3b;
+    font-weight: 900;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    line-height: 50px;
+    transition: 0.9s;
+    margin-top: 20%;
+}
+
+.caption span{
+    display: block;
+    text-transform: initial;
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 15px;
+}
+
+.dots{
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots label{
+    width: 15px;
+    height: 15px;
+    background: #ffeb3b;
+    margin: 0 10px;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.dots label:hover{
+    opacity: 0.7;
+}
+#radio-1:checked ~ #slide-1,
+#radio-2:checked ~ #slide-2,
+#radio-3:checked ~ #slide-3,
+#radio-4:checked ~ #slide-4{
+    opacity: 1;
+}
+#radio-1:checked ~ #slide-1 img,
+#radio-2:checked ~ #slide-2 img,
+#radio-3:checked ~ #slide-3 img,
+#radio-4:checked ~ #slide-4 img{
+    transform: scale(1);
+}
+#radio-1:checked ~ #slide-1 .caption,
+#radio-2:checked ~ #slide-2 .caption,
+#radio-3:checked ~ #slide-3 .caption,
+#radio-4:checked ~ #slide-4 .caption{
+    opacity: 1;
+    top: 7%;
+    font-size: 80px;
+}
+#radio-1:checked ~ .dots #label-1,
+#radio-2:checked ~ .dots #label-2,
+#radio-3:checked ~ .dots #label-3,
+#radio-4:checked ~ .dots #label-4{
+    background: #ffeb3b;
+    opacity: 1;
+}
+
+
+
+.count{
+    width: 100%;
+    height: 500px;    
+    float:left ;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.count_heading{
+    width: 100%;
+    height: auto;
+    
+    margin-top:2% ;
+    text-align: center;
+    
+
+}
+
+.ourassests{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #2e2e2e;
+}
+
+.countbox{
+    width: 20%;
+    height: 80%;    
+    float: left;
+    margin: 1%;    
+    border-radius: 10px;    
+}
+
+.countbox:hover{
+    background-color: #d5eb11;
+    transition: 0.6s;
+}
+
+.countbox_icon{
+    width: 100%;
+    height: 30%;
+    
+    padding-top: 5%;
+}
+    
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' -25,
+  'opsz' 24;
+  
+  
+}
+#btn_lab_profile{
+    font-size: 70px;
+}
+
+.count_numbers{
+width: 100%;
+height: 40%;
+}
+
+.counter{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2e2e2e;
+    font-size: 100px;
+}
+
+.count_title{
+    width: 100%;
+    height: 30%;
+}
+.h2_counter_title{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2e2e2e;
+    
+}
+
+
+.why{
+    width: 100%;
+    height: 800px;      
+    text-align: center;
+    background-color: #2e2e2e;
+    float: left;
+    text-align: center;
+    object-fit: cover;
+    
+}
+
+.why_h1{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #ffffff;
+    padding-top:2%;
+}
+
+.why_description{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    color: #ffffff;
+    padding:10px 100px 0px 100px;
+    line-height: 50px;   
+}
+
+.why_container_box{
+    
+    margin-top: 2%;
+    width: 100%;
+    height:60%;
+    display: flex;
+    justify-content: center;
+    
+}
+.why_card{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    margin-left: 2%;
+    box-shadow: 10px 10px 10px;
+}
+
+.why_card:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+.why_img{
+    height: 50%;
+    width: 100%;     
+    overflow: hidden;
+    
+}
+.why_img_link{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.why_card_title{
+    text-align: left;
+    padding-top: 2%;
+    padding-left:2%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.why_card_title_description{
+    text-align: left;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 25px;
+}
+
+
+
+
+.review_main{
+	height: 600px;
+	width: 100%;
+	
+	text-align: center;
+    float: left;
+}
+
+.review_heading{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;    
+    padding-top: 2%;
+}
+.review_box{
+	height: 80%;
+	width: 100%;	
+	display: flex;
+	justify-content: center;
+	font-family: "Roboto", sans-serif;
+ 	font-style: normal;
+}
+
+.review_card{
+	height: 80%;
+	width: 20%;
+	background-color: #E1E1E1;
+	margin-left: 2%;
+	padding: 2% 2% 10% 2%;
+	border-radius: 10px;
+	text-align: left;
+}
+.review_box_clientname{
+	font-weight: 600px;
+}
+.stars_div{
+	height: 40px;
+	width: 90%;	
+}
+.stars_box{
+	width: 15%;
+	height: 100%;
+	float: left;
+	text-align: left;	
+}
+#star1, #star2, #star3, #star4, #star5, #star6, #star7, #star8, #star9, #star10, #star11, #star12, #star13, #star14, #star15{
+	font-size: 40px;
+	color: darkorange;
+}
+.review_box_days{
+	font-size:15px;
+	color: lightslategray
+	
+}
+.comment{
+	font-size:16px;
+	line-height: 30px;
+}
+
+
+
+
+
+
+
