@@ -206,7 +206,7 @@ height: 40%;
     width: 100%;
     height: 800px;      
     text-align: center;
-    background-color: #2e2e2e;
+    background-image: linear-gradient(30deg,  transparent, rgb(34, 34, 34));
     float: left;
     text-align: center;
     object-fit: cover;
@@ -245,7 +245,7 @@ height: 40%;
     height: 100%;
     background-color: rgb(255, 255, 255);
     margin-left: 2%;
-    box-shadow: 10px 10px 10px;
+    box-shadow: 5px 5px 10px #2e2e2e;
 }
 
 .why_card:hover{
@@ -347,8 +347,53 @@ height: 40%;
 }
 
 
+.home_whats_new{
+    height: 600px;
+	width: 100%;	
+    float: left;
+    background-image: linear-gradient(30deg,  transparent, rgb(34, 34, 34));
+    background-size: cover;    
+    z-index: -100;
+    text-align: center;    
+}
 
 
 
 
+.content h1{
+    padding-top:2%;
+    color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;    
+    
+}
+
+
+.content p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;   
+    }
+
+.news_descriptions{
+    width: 50%;
+    height: 400px;
+    background-color: blueviolet;
+    float: left;
+    text-align: justify;
+    line-height: 30px;
+    padding: 40px 40px 0px 150px;
+}
+
+
+.news_image{    
+    height: 400px;
+    background-color: chocolate;
+    float: left;
+    display: flex;
+    border:10px solid #ffffff;
+   
+}
 
