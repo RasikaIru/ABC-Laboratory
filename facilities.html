@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="CSS/nav_bar.css">
+        <link rel="stylesheet" href="CSS/footer.css">
+        <link rel="stylesheet" href="CSS/body.css">
+
+        <link rel="stylesheet" href="CSS/about.css">
+
+        <link rel="stylesheet" href="CSS/facilities.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+
+        
+        <script src="JS/navbar_script.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <a href="#" class="logo">ABC Labs</a>
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="sign_in.html" class="header_sign_in">Sign</a></li>
+            </ul>
+        </header>
+
+
+
+
+        <div class="fac_slide"><img src="https://www.wh.group/cee/en/company/research_development/highres_labor_2019_07_23_wundh_labor_test_r_stage_master.jpg"></div>
+        
+        <div class="fac_heading"><h2>Tests Available</h2>
+            <p> At ABC Laboratory, we take pride in offering an extensive array of tests to meet your diverse needs. 
+            Our cutting-edge laboratory is equipped with advanced technology, and our expert team ensures that you receive 
+            accurate and reliable results in a timely manner.</p></div>
+
+<div class="tab">
+    <p class="tab_p">Tests available</p>
+  <button class="tablinks" onclick="openCity(event, 'test1')" id="defaultOpen">Test 1</button>
+  <button class="tablinks" onclick="openCity(event, 'test2')">Test 2</button>
+  <button class="tablinks" onclick="openCity(event, 'test3')">Test 3</button>
+  <button class="tablinks" onclick="openCity(event, 'test4')">Test 4</button>
+  <button class="tablinks" onclick="openCity(event, 'test5')">Test 5</button>
+  <button class="tablinks" onclick="openCity(event, 'test6')">Test 6</button>
+  <button class="tablinks" onclick="openCity(event, 'test7')">Test 7</button>
+</div>
+
+<div id="test1" class="tabcontent">
+  <h3>Test1</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="test2" class="tabcontent">
+  <h3>Test2</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="test3" class="tabcontent">
+  <h3>Test3</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<div id="test4" class="tabcontent">
+    <h3>Test4</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+
+  <div id="test5" class="tabcontent">
+    <h3>Test5</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+
+  <div id="test6" class="tabcontent">
+    <h3>Test6</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+
+  <div id="test7" class="tabcontent">
+    <h3>Test7</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>    
+
+
+
+
+
+
+
+
+
+
+        
+            
+        
+
+
+
+        <div class="footer">
+            <footer>
+                <div class="footerContainer">
+                    <div class="socialIcons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>			
+                    </div>
+                    <div class="footerNav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                <div class="footerBottom">
+                    <p>Copyright &copy;2024; Design By <span class="designer">Rasika</span> </p>
+                </div> 
+            </footer>
+        </div>
+
+        
+
+
+       
+
+
+
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="JS/jquery.counterup.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        });
+
+    </script>
+    </body>
+</html>
