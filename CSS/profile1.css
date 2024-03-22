@@ -30,6 +30,8 @@
 .user_info{
     border-collapse: collapse;
   width: 100%;
+  
+  justify-content: center;
 }
 
 .user_info th, td {
@@ -58,13 +60,27 @@
 }
 
 .make_appoinment{
-    border: 1px solid black; 
+    border: 1px solid rgb(0, 0, 0); 
     border-radius: 10px;
     width: 50%;
-    height: 300px;    
+    height: auto;    
     justify-content: center; 
     text-align: center;   
     margin: auto; 
+    padding-bottom: 20px;
+    
+}
+.make_appointment_date{
+    width:200px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    color: #DDD;
+}
+.make_appointment_dropdown{
+    width:200px;
+    height: 40px;
+    border-radius: 5px;
 }
 
 .make_appoinment_button{

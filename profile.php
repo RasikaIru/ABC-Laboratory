@@ -70,7 +70,7 @@ if(isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/W3.css">
-    <link rel="stylesheet" href="CSS/profile.css">
+    <link rel="stylesheet" href="CSS/profile1.css">
     <link rel="stylesheet" href="CSS/nav_bar.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/body.css">
@@ -82,6 +82,11 @@ if(isset($_POST["submit"])){
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />   
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> 
+
+
 </head>
 <body>
 
@@ -188,30 +193,78 @@ if(isset($_POST["submit"])){
 
             <span>Date :</span> <input type="date" name="date" id="date" value="date"></input>
 
-            <span>Test Name : </span> 
+            
+ <div class="container mt-4">
+ 
+   <div class="row">
+    <div class="col-sm-4">
+      <h6>Test Name</h6>
+        <select class="form-select" name="select" id="selectID">
+        <option>Select Option</option>
+ 
+        <?php $sql = "SELECT * FROM tests";
+            $result = mysqli_query($conn,$sql);
+            while($row = mysqli_fetch_assoc($result)) {?>
+            <option value="<?php echo $row['test_id'] ?>"><?php echo $row['testname'] ?></option>
+            <?php }?>
+            
+        </select>
+        
+     </div> <br>
+ 
+     <div class="col-sm-4">  
+     <h6>Doctor name</h6>
+      <select  class="form-select"  name="select" id="show" style="width:200px;"></select>
+     
+    </div>
+    <div class="col-sm-4">  
+    <h6>Price (LKR) </h6><h5 class="form-rate" name="rate" id="rate"></h5>
+    
+            </div>
+    
+    
+    
+   </div>
+ </div>  
+<script>
+  $(document).ready(function(){
+     $('#selectID').change(function(){
+      var Doctorid = $('#selectID').val(); 
+ 
+      $.ajax({
+        type: 'POST',
+        url: 'Fetches/fetch.php',
+        data: {doctor_id:Doctorid},  
+        success: function(data)  
+         {
+            $('#show').html(data);
+         }
+        });
+     });
+  });
+</script> 
 
-            <select style="width:400px;" name="test_name" id="test_name" value="">
-            <option value="testname" disabled selected style="color: lightgray;">Select your option</option>
-              <?php
-                include ('config.php');
-                $tests = mysqli_query($conn, "SELECT * FROM tests");
-                while($C = mysqli_fetch_array($tests)){
-                  ?>
-                  <option value="<?php echo $C['id'] ?>"><?php echo $C['testname']?> </option>
-                  <?php } ?>
-            </select> <br><br>
 
-            <span> Doctor Name :  </span>
-            <select style="width:400px;" name="doctor_name" id="doctor_name" value="">
-            <option value="" disabled selected style="color: lightgray;">Select your doctor</option>
-              <?php
-                include ('config.php');
-                $tests = mysqli_query($conn, "SELECT * FROM tests");
-                while($C = mysqli_fetch_array($tests)){
-                  ?>
-                  <option value="<?php echo $C['id'] ?>"><?php echo $C['doctorname']?> </option>
-                  <?php } ?>
-            </select><br><br>
+<script>
+  $(document).ready(function(){
+     $('#selectID').change(function(){
+      var Rateid = $('#selectID').val(); 
+ 
+      $.ajax({
+        type: 'POST',
+        url: 'Fetches/rates.php',
+        data: {rate_id:Rateid},  
+        success: function(data)  
+         {
+            $('#rate').html(data);
+         }
+        });
+     });
+  });
+</script> 
+
+
+           <br><br>
 
             <button type="submit" name="submit" class="make_appoinment_button">Submit</button>
             </form>
@@ -266,10 +319,46 @@ if(isset($_POST["submit"])){
 
 
 
-        <div id="Bills" class="w3-container city" style="display:none">
+        <div id="Bills" class="w3-container city" style="display:none; justify-items: center;">
           <h2>Bills</h2>
-          <p>Tokyo is the capital of Japan.</p>
-          <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+          <div class="col-lg-6 col-md-6 col-12">
+			<div class="card">
+				<div class="card-header text-center">
+				<h4>Unpaid Bills</h4>
+				</div>
+				<div class="card-body">
+				<div class="table-responsive">
+					<table class="user_info">
+						<thead>
+							<th>Bill ID</th>
+							<th>Patient ID</th>
+							<th>Bill</th>
+						</thead>
+						<tbody>
+						<?php
+							$sql = "select * from bill where patientid=$id;";
+							$squery = mysqli_query($conn, $sql);
+
+							while (($result = mysqli_fetch_assoc($squery))) {
+						?>
+						<tr>
+							<td><?php echo $result['bill_id']; ?></td>
+							<td><?php echo $result['patientid']; ?></td>
+							
+              <td><a href="Bill_PDF/<?php echo $result['filename']; ?>"><?php echo $result['filename']; ?></td>
+
+
+              <td><button style="width: 100px; height: 30px; border-radius: 5px;">Pay bill</button></td>
+						</tr>
+						<?php
+							}
+						?>
+						</tbody>
+					</table>			 
+					</div>
+				</div>
+			</div>
+		</div> 
         </div>
 
 
@@ -284,10 +373,45 @@ if(isset($_POST["submit"])){
 
 
         <div id="Lab_Reports" class="w3-container city" style="display:none">
-            <h2>Lab Reports</h2>
-            <p>Tokyo is the capital of Japan.</p>
-            <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
-          </div>      
+        <h2>Lab Reports</h2>
+          <div class="col-lg-6 col-md-6 col-12">
+			<div class="card">
+				<div class="card-header text-center">
+				<h4>Lab Reports</h4>
+				</div>
+				<div class="card-body">
+				<div class="table-responsive">
+					<table class="user_info">
+						<thead>
+							<th>Report ID</th>
+							<th>Patient ID</th>
+							<th>Report</th>
+						</thead>
+						<tbody>
+						<?php
+							$sql = "select * from report where patientid=$id;";
+							$squery = mysqli_query($conn, $sql);
+
+							while (($result = mysqli_fetch_assoc($squery))) {
+						?>
+						<tr>
+							<td><?php echo $result['report_id']; ?></td>
+							<td><?php echo $result['patientid']; ?></td>
+							
+              <td><a href="Report_PDF/<?php echo $result['filename']; ?>"><?php echo $result['filename']; ?></td>
+
+
+              
+						</tr>
+						<?php
+							}
+						?>
+						</tbody>
+					</table>			 
+					</div>
+				</div>
+			</div>
+		</div>      
       </div>
 
       
