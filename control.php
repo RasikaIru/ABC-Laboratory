@@ -6,11 +6,7 @@
         <link rel="stylesheet" href="CSS/nav_bar.css">
         <link rel="stylesheet" href="CSS/footer.css">
         <link rel="stylesheet" href="CSS/body.css">
-
-        <link rel="stylesheet" href="CSS/contactus.css">
-
-        <link rel="stylesheet" href="CSS/home.css">
-
+        <link rel="stylesheet" href="CSS/control.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -34,43 +30,22 @@
             </ul>
             <ul>
                 <li><a href="login.php" class="header_register">Sign In</a></li>
+                
             </ul>
         </header>
 
+        <div class="control_box">
+            <div class="switch_box">
+            <h2>Please select your role</h2><br>
+            <p style="color: #9e9e9e;"> Thank you for your service to ABC Laboratory. <br><br>Please select your role to continue in to the login pages.</p><br><br><br>
+        <div class="button_box">
+            <a href="admin.php"><button class="btn" href="google.com"> <i class="fa-solid fa-user-tie" style="font-size: 100px;"></i> <h3 style="padding-top: 10px;">Administrator</h3></button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="doctor.php"><button class="btn"> <i class="fa-solid fa-user-doctor" style="font-size: 100px;"></i><h3 style="padding-top: 10px;">Doctor</h3></button></a>
 
-
-
-        
-            <div class="contactus_slide"><img src="https://149937394.v2.pressablecdn.com/wp-content/uploads/Request_Appointment-scaled.jpg"></div>
-
-            <div class="contact_heading"><h1>Contact Us</h1><p>Thank you for considering ABC Laboratory for your testing needs. We are here to provide you with seamless access to our cutting-edge facilities and a team of dedicated professionals. Whether you have questions, need assistance, or are ready to initiate testing services, our contact channels are open and ready to serve you.</p></div>
-
-            <div class="contact_box">
-                <div class="contact_box_left">
-                    <div class="box">
-                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="text"><h3>Adddress</h3><p>No 625S, Galle Road, Colombo 03, Sri Lanka</p></div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
-                        <div class="text"><h3>Phone</h3><p>123-456-7890 (Call Center)</p><p>888-888-888 (General)</p> </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="text"><h3>Email</h3><p>info@abclabs.com</p><p>inquiry@abclabs.com</p></div>
-                    </div>
-                    
-                </div>
-                <form class="contact_box_right" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="527518eb-b5e2-4470-8639-ba68f6c2dae8">
-                    <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
-                    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-                    <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-                    <button type="submit">submit</button>
-                </form>
             </div>
+        </div>
+        </div>
         
-           
 
 
 
@@ -80,9 +55,19 @@
 
 
 
-        
-            
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,25 +98,13 @@
             </footer>
         </div>
 
-        
-
-
-       
 
 
 
 
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="JS/jquery.counterup.min.js"></script>
 
-    <script>
-        jQuery(document).ready(function($) {
-            $('.counter').counterUp({
-                delay: 10,
-                time: 1000
-            });
-        });
 
-    </script>
+
+
     </body>
 </html>

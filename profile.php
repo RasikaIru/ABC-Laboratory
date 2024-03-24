@@ -12,18 +12,18 @@ else{
 
 
 
-if(isset($_POST["submit"])){
+if(isset($_POST["appo_submit"])){
     $patientid = $_POST["id"];
     $name = $_POST["name"];
     $date = $_POST["date"];
-    $testname = $_POST["test_name"];
-    $doctorname = $_POST["doctor_name"];
+    $testname = $_POST["testname"];
+    $doctorname = $_POST["doctorname"];
     
     
         
-            $query = mysqli_query($conn, "INSERT INTO appointments (appointmentid, patientid, name, date, testname, doctorname)  VALUES (NULL, '$patientid', '$name', '$date', '$testname', '$doctorname')");
+            $query = mysqli_query($conn, "INSERT INTO appointments  VALUES ('', '$patientid', '$name', '$date', '$testname', '$doctorname','','')");
             if($query){
-              echo "<script>alert('done')</script>";
+              echo "<script>alert('The Appointment has successfully made')</script>";
             } else {
               echo "<script>alert('error')</script>";
             }
@@ -100,9 +100,8 @@ if(isset($_POST["submit"])){
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
             <ul>
-                <li><a href="login.php" class="header_register">Login</a></li>
-                <div class="seperator"></div>
-                <li><a href="appointment.html" class="header_appointment">Appointment</a></li>
+                <li><a  href="logout.php" target="_blank">Logout</a></li>
+                
             </ul>
         </header>
 
@@ -123,15 +122,15 @@ if(isset($_POST["submit"])){
         <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Bills')">Bills</button>
         <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Lab_Reports')">Lab Reports</button>
       <br><br>
-        <a class="w3-bar-item w3-button tablink" href="logout.php" target="_blank">Logout</a>
+        
     </div>
 
 
 
-      <div style="margin-left:200px; padding:150px 0 0 100px">
+      <div style="margin-left:200px; padding:150px 0 0 100px; height: 800px;">
         
       
-        <div id="Profile" class="w3-container city"  >
+        <div id="Profile" class="w3-container city" style="height: 800px;" >
           
           <h2 style="text-align: center; font-family:'Roboto', sans-serif; font-weight: 900;">Welcome <?php echo $row["name"]; ?></h2>
 
@@ -175,23 +174,31 @@ if(isset($_POST["submit"])){
 
 
 
-        <div id="Appoinments" class="w3-container city" style="display:none;  justify-content:center;">
+        <div id="Appoinments" class="w3-container city" style="display:none;  justify-content:center; width: 100%; height: 800px;">
           
-            <div class="make_appoinment">
+            <div class="make_appoinment" style="width: 100%;">
 
 
 
             <form class="" action="" method="post" autocomplete="off">
              <h2 style="font-family:'Roboto', sans-serif; font-weight: 900; text-align:center; padding-bottom:20px; background-color: rgb(104, 175, 241);">Make Appointment</h2>
-            <p style="padding-bottom:20px;">Patient Name : <?php echo $row["name"]; ?></p>
+            
 
             <input type="hidden" name="id" class="textField" vlaue="<?php echo $row['id']; ?>">
            
             <input type="hidden" name="name" class="textField" vlaue="<?php echo $row['name']; ?>">
            
+            <span for="id">Patient ID : 
+            <select  name="id" id="id" style="width: 100px;height: 50px; border-radius: 5px; border: 1px solid #e0e0e0;">
+            <option style="text-align: center;"><?php echo $row['id']; ?></option>
+            </select></span>&emsp;&emsp;&emsp;&emsp;
+            
+            <span for="name">Patient Name : 
+            <select  name="name" id="name" style="width: 200px; height: 50px; border-radius: 5px; border: 1px solid #e0e0e0;">
+            <option style="text-align: center;"><?php echo $row['name']; ?></option>
+            </select></span>&emsp;&emsp;&emsp;&emsp;
 
-
-            <span>Date :</span> <input type="date" name="date" id="date" value="date"></input>
+            <span>Date :</span> <input type="date" name="date" id="date" value="date" style="height: 50px; border-radius: 5px; border: 1px solid #e0e0e0;"></input>
 
             
  <div class="container mt-4">
@@ -199,7 +206,7 @@ if(isset($_POST["submit"])){
    <div class="row">
     <div class="col-sm-4">
       <h6>Test Name</h6>
-        <select class="form-select" name="select" id="selectID">
+        <select  name="testname" id="selectID" style="width: 200px; height: 50px; border-radius: 5px; border: 1px solid #e0e0e0;">
         <option>Select Option</option>
  
         <?php $sql = "SELECT * FROM tests";
@@ -214,7 +221,7 @@ if(isset($_POST["submit"])){
  
      <div class="col-sm-4">  
      <h6>Doctor name</h6>
-      <select  class="form-select"  name="select" id="show" style="width:200px;"></select>
+      <select   name="doctorname" id="show" style="width: 200px; height: 50px; border-radius: 5px; border: 1px solid #e0e0e0;"></select>
      
     </div>
     <div class="col-sm-4">  
@@ -266,7 +273,7 @@ if(isset($_POST["submit"])){
 
            <br><br>
 
-            <button type="submit" name="submit" class="make_appoinment_button">Submit</button>
+            <button type="submit" name="appo_submit" class="make_appoinment_button">Book Appointment</button>
             </form>
 
             </div>
@@ -319,7 +326,7 @@ if(isset($_POST["submit"])){
 
 
 
-        <div id="Bills" class="w3-container city" style="display:none; justify-items: center;">
+        <div id="Bills" class="w3-container city" style="display:none; justify-items: center; height: 800px;">
           <h2>Bills</h2>
           <div class="col-lg-6 col-md-6 col-12">
 			<div class="card">
@@ -372,7 +379,7 @@ if(isset($_POST["submit"])){
 
 
 
-        <div id="Lab_Reports" class="w3-container city" style="display:none">
+        <div id="Lab_Reports" class="w3-container city" style="display:none; height: 800px;">
         <h2>Lab Reports</h2>
           <div class="col-lg-6 col-md-6 col-12">
 			<div class="card">
@@ -415,6 +422,42 @@ if(isset($_POST["submit"])){
       </div>
 
       
+
+
+
+
+      <div class="footer">
+            <footer>
+                <div class="footerContainer">
+                    <div class="socialIcons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>			
+                    </div>
+                    <div class="footerNav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                <div class="footerBottom">
+                    <p>Copyright &copy;2024; Design By <span class="designer">Rasika</span> </p>
+                </div> 
+            </footer>
+        </div>
+
+
+
+
+
+
       
       <script>
       function openCity(evt, cityName) {

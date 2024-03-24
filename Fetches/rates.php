@@ -1,7 +1,7 @@
 <?php
   include('config.php');
 $rate_id = $_POST['rate_id'];
-  $sql = "SELECT * FROM rates WHERE test_id= $rate_id ";
+  $sql = "SELECT * FROM tests WHERE test_id= $rate_id ";
   $result = mysqli_query($conn,$sql);
  
   $out='';
